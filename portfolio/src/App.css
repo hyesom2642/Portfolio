@@ -1,0 +1,30 @@
+body {
+  width: 100vw;
+  height: 500vh;
+  background-color: #000;
+  position: relative;
+  overflow-x: hidden
+}
+
+* {
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+ul {
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
