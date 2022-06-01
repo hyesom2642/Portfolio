@@ -6,6 +6,13 @@ function Info(){
             <ProfileWrapper>
                 <ImgWrapper>
                     <img src="/profile.png" alt="" />
+                    <figcaption>
+                        <p>
+                            김현주 <br />
+                            1994. 01. 28 <br />
+                            82+010-9425-6834 <br />
+                        </p>
+                    </figcaption>
                 </ImgWrapper>
                 <ButtonWrapper>
                     <button>E-MAIL</button>
@@ -26,19 +33,43 @@ const ProfileWrapper = styled.div`
     width: 600px;
     padding: 30px 0;
 `;
-const ImgWrapper = styled.div`
-    width: 100%;
+const ImgWrapper = styled.figure`
+    position: relative;
+    width: 200px;
     margin-right: 5vw;
     overflow: hidden;
 
     img {
+        width: 100%;
+        height: 100%;
         border-radius: 50%;
         border: 1px solid #eee;
 
         &:hover {
-            opacity: 0.7;
+            opacity: 0.2;
             cursor: pointer;
         }
+        &:hover figcation
+    }
+    figcaption {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        box-sizing: border-box;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+    
+    &:hover figcaption {
+        opacity: 1;
     }
 `;
 const ButtonWrapper = styled.div`
