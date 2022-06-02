@@ -1,9 +1,36 @@
+// > css 
 import styled from 'styled-components';
 
+// > 
+import { useMediaQuery } from 'react-responsive';
+
 function Info(){
+    const Mobile = useMediaQuery(
+        { maxWidth: 767 }
+    );   
+
     return(
         <>
-            <ProfileWrapper>
+        {
+            Mobile 
+            ? <MobileProfileWrapper>
+                <ImgWrapper>
+                    <img src="/profile.png" alt="" />
+                    <figcaption>
+                        <p>
+                            김현주 <br />
+                            1994. 01. 28 <br />
+                            82+010-9425-6834 <br />
+                        </p>
+                    </figcaption>
+                </ImgWrapper>
+                <ButtonWrapper>
+                    <button>E-MAIL</button>
+                    <button>BLOG</button>
+                    <button>GITHUB</button>
+                </ButtonWrapper>
+            </MobileProfileWrapper>
+            : <ProfileWrapper>
                 <ImgWrapper>
                     <img src="/profile.png" alt="" />
                     <figcaption>
@@ -20,6 +47,7 @@ function Info(){
                     <button>GITHUB</button>
                 </ButtonWrapper>
             </ProfileWrapper>
+        }
         </>
     )
 }
@@ -32,6 +60,18 @@ const ProfileWrapper = styled.div`
     align-items: center;
     width: 600px;
     padding: 30px 0;
+`;
+const MobileProfileWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    padding-bottom: 30px;
+
+    ButtonWrapper {
+        width: 150px;
+    }
+
 `;
 const ImgWrapper = styled.figure`
     position: relative;
