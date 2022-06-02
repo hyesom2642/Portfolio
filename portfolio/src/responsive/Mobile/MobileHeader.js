@@ -62,13 +62,15 @@ export default Header;
 
 const Wrapper = styled.div`
     position: fixed;
-    width: 100%;
+    width: 15vw;
     height: 100vh;
     padding: 0;
     display: flex;
     background-color: inherit;
+    z-index: 10
 `;
 const SidebarWrapper = styled.div`
+    z-index: 10;
     background-color: #000;
     width: 40vw;
     height: 100vh;
