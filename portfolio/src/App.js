@@ -13,6 +13,8 @@ import EctButton from './components/EctButton';
 import { useMediaQuery } from 'react-responsive';
 import MobileHome from './responsive/Mobile/MobileHome';
 import MobileHeader from './responsive/Mobile/MobileHeader';
+import MobileAbout from './responsive/Mobile/MobileAbout';
+import MobileProject from './responsive/Mobile/MobileProject';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
       <Mobile>
         <MobileHeader />
         <MobileHome />
+        <MobileAbout />
+        <MobileProject />
       </Mobile>
     </>
   );
@@ -34,12 +38,12 @@ function App() {
 
 export default App;
 
-const Desktop = ({children}) => {
-  const isDesktop = useMediaQuery({ minWidth: 992 })
-  return isDesktop ? children : null
-}
-
 const Mobile = ({children}) => {
   const isMobile = useMediaQuery({ maxWidth: 767 })
   return isMobile ? children : null
+}
+
+const Desktop = ({children}) => {
+  const isDesktop = useMediaQuery({ minWidth: 992 })
+  return isDesktop ? children : null
 }
