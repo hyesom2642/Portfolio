@@ -7,43 +7,36 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Project from './pages/Project';
 import EctButton from './components/EctButton';
-// import Responsive from './responsive/Responsive';
+import Loading from './components/Loading/Loading';
 
 // > mediaquery
-import { useMediaQuery } from 'react-responsive';
-import MobileHome from './responsive/Mobile/MobileHome';
-import MobileHeader from './responsive/Mobile/MobileHeader';
-import MobileAbout from './responsive/Mobile/MobileAbout';
-import MobileProject from './responsive/Mobile/MobileProject';
+import { ThemeProvider } from "styled-components";
+import theme from './style/theme';
+
+// > 
+import { useState, useEffect } from 'react';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect( () => {
+    setLoading(false);
+  }, [])
+
   return (
     <>
-      <Desktop>
-        <Header />
-        <EctButton />
-        <Home />
-        <About />
-        <Project />
-      </Desktop>
-      <Mobile>
-        <MobileHeader />
-        <MobileHome />
-        <MobileAbout />
-        <MobileProject />
-      </Mobile>
+    {
+      loading === true
+      ? <Loading />
+      : <ThemeProvider theme={theme}>
+          <Header />
+          <Home />
+          <About />
+          <Project />
+          <EctButton />
+        </ThemeProvider>
+    }
     </>
-  );
+  )
 }
-
 export default App;
-
-const Mobile = ({children}) => {
-  const isMobile = useMediaQuery({ maxWidth: 767 })
-  return isMobile ? children : null
-}
-
-const Desktop = ({children}) => {
-  const isDesktop = useMediaQuery({ minWidth: 992 })
-  return isDesktop ? children : null
-}
