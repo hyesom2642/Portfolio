@@ -34,7 +34,7 @@ const Navbar = ({ toggleMenu, screenWidth, toggleNav }) => {
                         toggleMenu ? <AiOutlineClose /> :<AiOutlineMenu />
                     }
                 </MenuIcon>
-                { (toggleMenu || screenWidth > 1024) && (
+                { (toggleMenu || screenWidth > 1199) && (
                     <>
                         <NavbarLeftList>
                             <li>
