@@ -1,19 +1,47 @@
 // > css 
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const Container = styled.div`
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: flex-start;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     color: #fff;
+
+    @media screen and ${props => props.theme.tablet} {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    @media screen and ${props => props.theme.mobile} {
+        
+    }
+`;
+const Wrapper = styled.div`
+    width: 100%;
+
+    @media screen and ${props => props.theme.tablet} {
+        width: 100%;
+    }
+    @media screen and ${props => props.theme.mobile} {
+        width: 100%;
+    }
 `;
 
 const Title = styled.h1`
     font-size: 80px;
     margin: 50px 0;
+
+    @media screen and ${props => props.theme.tablet} {
+        font-size: 60px;
+        margin: 30px 0;
+    }
+    @media screen and ${props => props.theme.mobile} {
+        font-size: 45px;
+    }
 `;
 const Skills= styled.ul`
     display: flex;
@@ -32,11 +60,35 @@ const Skills= styled.ul`
             margin-right: 0;
         }
     }
+    
+    @media screen and ${props => props.theme.tablet} {
+        justify-content: center;
 
+        li {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+    }
+    @media screen and ${props => props.theme.mobile} {
+        flex-direction: column;
+
+        li {
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+    }
 `;
 const Explanation = styled.p`
     font-size: 30px;
     margin-bottom: 50px;
+
+    @media screen and ${props => props.theme.tablet} {
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+    @media screen and ${props => props.theme.mobile} {
+
+    }
 `;
 const ButtonWrapper = styled.div`
     display: flex;
@@ -68,6 +120,35 @@ const ButtonWrapper = styled.div`
             color: #000;
         }
     }
+
+    @media screen and ${props => props.theme.tablet} {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    @media screen and ${props => props.theme.mobile} {
+        margin-bottom: 0;
+    }
 `;
 
-export { Wrapper, Title, Skills, Explanation, ButtonWrapper };
+const ProjectImgWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 100%;
+    max-height: 500px;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    @media screen and ${props => props.theme.tablet} {
+
+    }
+    @media screen and ${props => props.theme.mobile} {
+        display: none;
+    }
+`;
+
+export { Container, Wrapper, Title, Skills, Explanation, ButtonWrapper, ProjectImgWrapper };
