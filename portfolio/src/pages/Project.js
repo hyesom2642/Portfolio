@@ -1,12 +1,27 @@
-import Work from '../components/Work';
+// > css 
+import styled from 'styled-components';
 
-function Project(){
+// > components 
+import Content from '../components/Content/Content';
+
+const Project = () => {
+
     return(
         <>
-            <Work />
-            <Work />
+            <Wrapper>
+                <Content />
+            </Wrapper>
         </>
     )
 }
-
 export default Project;
+
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+`;
