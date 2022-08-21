@@ -9,35 +9,49 @@ import Word from '../components/Word';
 function About(){
     return(
         <>
-            <WrapperFlex>
-                <Wrapper>
+            <Wrapper>
+                <Container>
                     <Carousel />
                     <Info />
                     <Word />
-                </Wrapper>
-            </WrapperFlex>
+                </Container>
+            </Wrapper>
         </>
     )
 }
 
 export default About;
 
-const WrapperFlex = styled.div`
+const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
+    padding: 40px;
+
+    @media screen and ${props => props.theme.tablet} {
+        padding: 10% 5%;
+    }
+
+    @media screen and ${((props) => props.theme.mobile)} {
+        
+    }
 `;
 
-const Wrapper = styled.div`
+const Container = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    width: 85vw;
-    height: 90vh;
+    width: 100%;
+    height: 100%;
     padding: 30px 0;
     background-color: #fff;
     border-radius: 30px;
+    text-align: center;
+
+    @media screen and ${((props) => props.theme.mobile)} {
+        padding: 0;
+    }
 `;
