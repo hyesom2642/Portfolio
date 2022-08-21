@@ -5,7 +5,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     height: 100vh;
     color: #fff;
@@ -22,6 +22,7 @@ const Container = styled.div`
 `;
 const Wrapper = styled.div`
     width: 100%;
+    padding-right: 20px;
 
     @media screen and ${props => props.theme.tablet} {
         width: 100%;
@@ -32,15 +33,15 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-    font-size: 80px;
+    font-size: 60px;
     margin: 50px 0;
 
     @media screen and ${props => props.theme.tablet} {
-        font-size: 60px;
-        margin: 30px 0;
+        font-size: 45px;
+        margin: 0 0 30px 0;
     }
     @media screen and ${props => props.theme.mobile} {
-        font-size: 45px;
+        font-size: 35px;
     }
 `;
 const Skills= styled.ul`
@@ -49,15 +50,22 @@ const Skills= styled.ul`
     align-items: center;
 
     li {
-        font-size: 30px;
+        font-size: 20px;
         margin-right: 10px;
         border: 1px solid #eee;
         border-radius: 50px;
         padding: 5px 25px;
         margin-bottom: 50px;
+        transition: all 0.3s ease-in-out;
 
         &:last-child {
             margin-right: 0;
+        }
+
+        &:hover {
+            color: #000;
+            background-color: #fff;
+            cursor: pointer;
         }
     }
     
@@ -87,7 +95,7 @@ const Explanation = styled.p`
         margin-bottom: 30px;
     }
     @media screen and ${props => props.theme.mobile} {
-
+        font-size: 20px;
     }
 `;
 const ButtonWrapper = styled.div`
@@ -130,12 +138,9 @@ const ButtonWrapper = styled.div`
     }
 `;
 
-const ProjectImgWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 350px;
-    height: 100%;
-    max-height: 500px;
+const ImageWrapper = styled.div`
+    width: 500px;
+    height: auto;
 
     img {
         display: block;
@@ -151,4 +156,4 @@ const ProjectImgWrapper = styled.div`
     }
 `;
 
-export { Container, Wrapper, Title, Skills, Explanation, ButtonWrapper, ProjectImgWrapper };
+export { Container, Wrapper, Title, Skills, Explanation, ButtonWrapper, ImageWrapper };
