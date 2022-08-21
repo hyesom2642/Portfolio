@@ -1,3 +1,4 @@
+// > styled-component 
 import { Nav, MenuIcon, NavbarLeftList, NavbarRightList } from './NavbarElement';
 
 // > 
@@ -48,13 +49,13 @@ const Navbar = ({ toggleMenu, screenWidth, toggleNav }) => {
                                 </a>
                             </li>
                             <li>
-                                <a href="https://github.com/hyesom2642" target='blank'>
+                                <a href="mailto: kimhyesom@naver.com" target='blank'>
                                     <AiOutlineMail />
                                 </a>
                             </li>
                         </NavbarLeftList>
                         <NavbarRightList>
-                            <li>
+                            <li >
                                 { navbarData[3].name }
                             </li>
                             <li>
