@@ -1,6 +1,6 @@
 const size = {
-    mobile: '600px',
-    tablet: '900px',
+    mobile: '767px',
+    tablet: '1199px',
     desktop: '1200px',
 };
 
@@ -9,5 +9,4 @@ const theme = {
     tablet: `(max-width: ${size.tablet})`,
     desktop: `(min-width: ${size.desktop})`
 };
-
 export default theme;
