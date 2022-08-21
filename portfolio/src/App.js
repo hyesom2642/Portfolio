@@ -3,10 +3,10 @@ import './App.css';
 
 // > components 
 import Navbar from './components/Navbar/Navbar';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import About from './pages/About';
 import Project from './pages/Project';
-import EctButton from './components/EctButton';
+import Etc from './components/Etc/Etc';
 import Loading from './components/Loading/Loading';
 
 // > theme 
@@ -50,7 +50,7 @@ function App() {
               <Home />
               <About />
               <Project />
-              <EctButton />
+              <Etc />
             </>
             : null
           }
