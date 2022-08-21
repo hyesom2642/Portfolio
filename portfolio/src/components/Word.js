@@ -1,44 +1,55 @@
 // > css 
 import styled from 'styled-components';
 
-// > 
-import { useMediaQuery } from 'react-responsive';
-
 function Word(){
-    const Mobile = useMediaQuery(
-        { maxWidth: 767 }
-    );
-
     return(
         <>
-            {
-                Mobile 
-                ? <MobileWodrWrapper>
+            <Wrapper>
+                <WordWrapper>
+                    <strong>주니어 개발자 김현주 입니다!</strong>
                     <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </p>
-                </MobileWodrWrapper>
-                : <WordWrapper>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        배움에는 끝이 없습니다.<br />
+                        항상 배우는 자세로 겸손하게 변화에 맞춰 발전하는 프론트엔드 개발자가 되겠습니다.
                     </p>
                 </WordWrapper>
-            }
+            </Wrapper>
         </>
     )
 }
 
 export default Word;
 
-const WordWrapper = styled.div`
-    width: 800px;
-    padding: 30px 50px;
-    
-    p {
-        width: 100%;
+const Wrapper = styled.div`
+    width: 100%;
+    height: auto;
+    padding: 0 3%;
+
+    @media screen and ${(props) => props.theme.mobile} {
+        padding: 0 5%;
     }
 `;
 
-const MobileWodrWrapper = styled.div`
-    width: 400px;
+const WordWrapper = styled.div`
+    width: 100%;
+    text-align: center;
+
+    strong {
+        display: block;
+        font-size: 30px;
+        font-weight: bold;
+        margin: 15px 0;
+    }
+    p {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    @media screen and ${(props) => props.theme.mobile} {
+        strong {
+            font-size: 20px;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
 `;

@@ -1,77 +1,43 @@
 // > css 
 import styled from 'styled-components';
 
-// > 
-import { useMediaQuery } from 'react-responsive';
-
 function Info(){
-    const Mobile = useMediaQuery(
-        { maxWidth: 767 }
-    );   
 
     return(
         <>
-        {
-            Mobile 
-            ? <MobileProfileWrapper>
+            <Profile>
                 <ImgWrapper>
-                    <img src="/profile.png" alt="" />
-                    <figcaption>
+                    <img src="/profile.png" alt="김현주 프로필 사진" />
+                    {/* <figcaption>
                         <p>
                             김현주 <br />
                             1994. 01. 28 <br />
                             82+010-9425-6834 <br />
                         </p>
-                    </figcaption>
+                    </figcaption> */}
                 </ImgWrapper>
                 <ButtonWrapper>
-                    <button>E-MAIL</button>
-                    <button>BLOG</button>
-                    <button>GITHUB</button>
+                    <a href="mailto:kimhyesom@naver.com" className="email">E-MAIL</a>
+                    <a href="https://velog.io/@hyesom" target="blank" className="blog">BLOG</a>
+                    <a href="https://github.com/hyesom2642" target="blank" className="github">GITHUB</a>
                 </ButtonWrapper>
-            </MobileProfileWrapper>
-            : <ProfileWrapper>
-                <ImgWrapper>
-                    <img src="/profile.png" alt="" />
-                    <figcaption>
-                        <p>
-                            김현주 <br />
-                            1994. 01. 28 <br />
-                            82+010-9425-6834 <br />
-                        </p>
-                    </figcaption>
-                </ImgWrapper>
-                <ButtonWrapper>
-                    <button>E-MAIL</button>
-                    <button>BLOG</button>
-                    <button>GITHUB</button>
-                </ButtonWrapper>
-            </ProfileWrapper>
-        }
+            </Profile>
         </>
     )
 }
 
 export default Info;
 
-const ProfileWrapper = styled.div`
+const Profile = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 600px;
+    width: 100%;
     padding: 30px 0;
-`;
-const MobileProfileWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 350px;
-    padding-bottom: 30px;
 
-    ButtonWrapper {
-        width: 150px;
+    @media screen and ${(props) => props.theme.mobile} {
+        padding: 5%;
     }
-
 `;
 const ImgWrapper = styled.figure`
     position: relative;
@@ -81,15 +47,16 @@ const ImgWrapper = styled.figure`
 
     img {
         width: 100%;
-        height: 100%;
+        height: auto;
         border-radius: 50%;
         border: 1px solid #eee;
+        object-fit: contain;
+        transition: all 0.3s ease-in-out;
 
         &:hover {
-            opacity: 0.2;
+            opacity: 0.4;
             cursor: pointer;
         }
-        &:hover figcation
     }
     figcaption {
         position: absolute;
@@ -111,6 +78,7 @@ const ImgWrapper = styled.figure`
     &:hover figcaption {
         opacity: 1;
     }
+
 `;
 const ButtonWrapper = styled.div`
     display: flex;
@@ -118,7 +86,10 @@ const ButtonWrapper = styled.div`
     justify-content: center;
     align-items: center;
 
-    button {
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 200px;
         height: 50px;
         font-size: 18px;
@@ -127,6 +98,7 @@ const ButtonWrapper = styled.div`
         margin-bottom: 10px;
         background-color: #000;
         color: #fff;
+        transition: all 0.3s ease-in-out;
 
         &:last-child {
             margin-bottom: 0;
@@ -136,6 +108,12 @@ const ButtonWrapper = styled.div`
             background-color: #ffa000;
             border: none;
             cursor: pointer;
+            font-style: italic;
+        }
+    }
+    @media screen and ${(props) => props.theme.mobile} {
+        a {
+            width: 150px;
         }
     }
 `;

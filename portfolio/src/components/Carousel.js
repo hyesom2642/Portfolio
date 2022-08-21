@@ -53,8 +53,7 @@ function Carousel(){
                     </div>
                 </Slider>
             </SliderWrapper>
-        }
-            
+        }            
         </>
     )
 }
@@ -63,8 +62,8 @@ export default Carousel;
 const SliderWrapper = styled.div`
     display: block;
     width: 700px;
-    padding: 30px;
-
+    padding: 0 30px;
+    
     .slider {
         width: 100%;
 
@@ -73,6 +72,7 @@ const SliderWrapper = styled.div`
             font-weight: bold;
             font-family: 'Kanit', sans-serif;
             color: #ffa000;
+            
         }
     }
 `;
@@ -81,7 +81,7 @@ const MobileSliderWrapper = styled.div`
     display: block;
     width: 350px;
     padding: 30px;
-
+    
     .slider {
         width: 100%;
 
@@ -90,6 +90,7 @@ const MobileSliderWrapper = styled.div`
             font-weight: bold;
             font-family: 'Kanit', sans-serif;
             color: #ffa000;
+
         }
     }
 `;
